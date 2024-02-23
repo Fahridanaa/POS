@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class SalesPageController extends Controller
 {
     public function show() {
-        view('transactions.transaction');
+        return view('transactions.transaction');
     }
 }
