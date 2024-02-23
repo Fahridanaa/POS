@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\SalesPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'home']);
+Route::get('/category/{product}', [CategoryController::class, 'show']);
+Route::get('/user/{id}/name/{name}', [UserProfileController::class, 'show']);
+Route::get('/transaction', [SalesPageController::class, 'show']);
